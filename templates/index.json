@@ -23,7 +23,7 @@
             "open_in_new_window": false,
             "button_label": "Shop Now",
             "color_background_main": "rgba(0,0,0,0)",
-            "color_text_main": "#ECD8C6",
+            "color_text_main": "#ecd8c6",
             "seo_h_tag": "h1"
           }
         }
@@ -49,6 +49,19 @@
         "remove_margin": false,
         "color_hide_borders": false,
         "color_hide_shadow": true
+      }
+    },
+    "custom_liquid_a4WeEP": {
+      "type": "custom-liquid",
+      "name": "t:sections.refactor_words.custom_code.name",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "section_heading_layout": "section-heading--left",
+        "custom_liquid": "",
+        "full_width": false,
+        "remove_margin": false,
+        "seo_h_tag": "h2"
       }
     },
     "featured-collection": {
@@ -413,6 +426,7 @@
   },
   "order": [
     "1653646142d6a7c886",
+    "custom_liquid_a4WeEP",
     "featured-collection",
     "1655121489db318f96",
     "16541619272fee0e4e",
