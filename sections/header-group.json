@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "FREE delivery above 60$ 🇱🇧",
+            "text": "FREE DELIVERY ALL OVER  🇱🇧",
             "link": "",
             "target": false
           }
@@ -40,7 +40,7 @@
         "show_locale_selector": true,
         "show_country_selector": true,
         "show_social_icons": true,
-        "bar_bgcolor": "#B08969",
+        "bar_bgcolor": "#b08969",
         "bar_txtcolor": "#ffffff"
       }
     },

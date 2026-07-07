@@ -15,14 +15,14 @@
         "image_z7R6na": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_22.50.44_108e7adb-fe39-4d75-a1ed-e2bd591e0cc9.jpg",
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_3_2026_01_33_14_PM.png",
             "caption": "",
             "title": "",
             "link": "",
             "open_in_new_window": false,
             "button_label": "Shop Now !",
             "color_background_main": "rgba(0,0,0,0)",
-            "color_text_main": "#FFFFFF",
+            "color_text_main": "#ffffff",
             "seo_h_tag": "h3"
           }
         }
@@ -33,16 +33,16 @@
       "settings": {
         "desktop_height": "60vh",
         "mobile_height": "60vh",
-        "is_auto_height": true,
+        "is_auto_height": false,
         "autorotate_enable": false,
         "autorotate_interval": 5,
-        "alignment": "horizontal-right align-content--vertical-bottom",
+        "alignment": "horizontal-center align-content--vertical-bottom",
         "text_size": "regular",
-        "title_size": "h1",
+        "title_size": "h3",
         "button_size": "regular",
         "button_style": "solid",
         "is_fullwidth": true,
-        "section_background_color": "#FFFFFF",
+        "section_background_color": "#ffffff",
         "section_background_gradient": "",
         "section_heading_color": "rgba(0,0,0,0)",
         "remove_margin": false,
@@ -76,7 +76,7 @@
         "pause_on_hover": true,
         "remove_top_margin": true,
         "remove_bottom_margin": false,
-        "color_background_main": "#B08969",
+        "color_background_main": "#b08969",
         "section_background_gradient": "",
         "color_text_main": "#ffffff"
       }
@@ -435,6 +435,10 @@
         "remove_margin": false,
         "seo_h_tag": "h2"
       }
+    },
+    "1783457495ffbd9dbb": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -446,6 +450,7 @@
     "16546982542e923b5a",
     "16551212489c663a1e",
     "165407625224b5d2af",
-    "16553621956de397b6"
+    "16553621956de397b6",
+    "1783457495ffbd9dbb"
   ]
 }
