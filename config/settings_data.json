@@ -169,7 +169,7 @@
     "color_accent_main": "#000000",
     "color_background_cards": "#ffffff",
     "color_text_cards": "#000000",
-    "color_accent_cards": "#b08969",
+    "color_accent_cards": "#A68060",
     "color_borders_cards": "#e1e1e1",
     "shadow_buttons_color": "rgba(0,0,0,0)",
     "color_background_footer": "#ffffff",
@@ -184,6 +184,7 @@
     "product_icon_1_label": "",
     "cart_free_shipping": true,
     "cart_free_shipping_amount": "49.99",
+    "show_currency_codes": false,
     "sections": {
       "popups": {
         "type": "popups",

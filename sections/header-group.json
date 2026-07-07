@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "FREE DELIVERY ALL OVER  🇱🇧",
+            "text": "⛟ FREE DELIVERY ALL OVER   🇱🇧",
             "link": "",
             "target": false
           }
@@ -40,7 +40,7 @@
         "show_locale_selector": true,
         "show_country_selector": true,
         "show_social_icons": true,
-        "bar_bgcolor": "#b08969",
+        "bar_bgcolor": "#A68060",
         "bar_txtcolor": "#ffffff"
       }
     },
@@ -55,7 +55,7 @@
         "sticky_header": false,
         "select_header_actions_on_mobile": "show_on_homepage",
         "show_header_actions": false,
-        "show_locale_selector": true,
+        "show_locale_selector": false,
         "show_country_selector": false,
         "show_social_icons": true
       }
