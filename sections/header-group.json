@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "⛟  ㅤ FREE DELIVERY ALL OVERㅤ  🇱🇧",
+            "text": "FREE DELIVERY ALL OVER",
             "link": "",
             "target": false
           }
@@ -35,12 +35,13 @@
         "content",
         "content_cwVgKr"
       ],
+      "disabled": true,
       "settings": {
         "visibility": "all",
         "show_locale_selector": true,
         "show_country_selector": true,
         "show_social_icons": true,
-        "bar_bgcolor": "#A37A5F",
+        "bar_bgcolor": "#a37a5f",
         "bar_txtcolor": "#ffffff"
       }
     },
