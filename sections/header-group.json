@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "⛟ FREE DELIVERY ALL OVER   🇱🇧",
+            "text": "⛟  ㅤ FREE DELIVERY ALL OVERㅤ  🇱🇧",
             "link": "",
             "target": false
           }
@@ -25,7 +25,7 @@
         "content_cwVgKr": {
           "type": "content",
           "settings": {
-            "text": "Get ready for a cozy overdose ❄️",
+            "text": "30 Day Money Back Guarantee!",
             "link": "",
             "target": false
           }
@@ -40,7 +40,7 @@
         "show_locale_selector": true,
         "show_country_selector": true,
         "show_social_icons": true,
-        "bar_bgcolor": "#A68060",
+        "bar_bgcolor": "#A37A5F",
         "bar_txtcolor": "#ffffff"
       }
     },

@@ -16,15 +16,15 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_22.43.45_2.jpg",
-            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jul_3_2026_01_27_09_PM.png",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jul_8_2026_12_54_52_AM.png",
             "caption": "",
             "title": "",
-            "link": "",
+            "link": "shopify://products/nutrea-premium-collagen-strawberry-flavored",
             "open_in_new_window": false,
-            "button_label": "Shop Now !",
+            "button_label": "Shop Now",
             "color_background_main": "rgba(0,0,0,0)",
-            "color_text_main": "#ffffff",
-            "seo_h_tag": "h3"
+            "color_text_main": "#ECD8C6",
+            "seo_h_tag": "h1"
           }
         }
       },
@@ -37,7 +37,7 @@
         "is_auto_height": false,
         "autorotate_enable": false,
         "autorotate_interval": 5,
-        "alignment": "horizontal-center align-content--vertical-bottom",
+        "alignment": "horizontal-left align-content--vertical-bottom",
         "text_size": "regular",
         "title_size": "h3",
         "button_size": "regular",
@@ -49,37 +49,6 @@
         "remove_margin": false,
         "color_hide_borders": false,
         "color_hide_shadow": true
-      }
-    },
-    "marquee_KaNDMW": {
-      "type": "marquee",
-      "blocks": {
-        "text_eXFCCi": {
-          "type": "text",
-          "settings": {
-            "marquee_text": "Ultimate Coziness & Comfort"
-          }
-        },
-        "text_jpGB4D": {
-          "type": "text",
-          "settings": {
-            "marquee_text": "Perfect For Chilly Days"
-          }
-        }
-      },
-      "block_order": [
-        "text_eXFCCi",
-        "text_jpGB4D"
-      ],
-      "settings": {
-        "scroll_direction": "left",
-        "speed": 100,
-        "pause_on_hover": true,
-        "remove_top_margin": true,
-        "remove_bottom_margin": false,
-        "color_background_main": "#A68060",
-        "section_background_gradient": "",
-        "color_text_main": "#ffffff"
       }
     },
     "featured-collection": {
@@ -444,7 +413,6 @@
   },
   "order": [
     "1653646142d6a7c886",
-    "marquee_KaNDMW",
     "featured-collection",
     "1655121489db318f96",
     "16541619272fee0e4e",

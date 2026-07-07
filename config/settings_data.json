@@ -178,7 +178,7 @@
     "grid_gap": 16,
     "border_radius_cards": 10,
     "border_width_buttons": 1,
-    "border_radius_buttons": 30,
+    "border_radius_buttons": 10,
     "product_card_aspect_ratio": "0.666667",
     "product_icon_1_image": "",
     "product_icon_1_label": "",
