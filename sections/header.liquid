@@ -7,14 +7,41 @@
   endif
 -%}
 {% style %}
+
   .header__top {
     --header-logo: {{ logo_height }}px;
+
+    min-height: 64px !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
   }
+
+  .header__bottom {
+    min-height: 42px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+
+  .header__top .button {
+    min-height: 42px !important;
+  }
+
+  .header__bottom .header-links {
+    min-height: 42px !important;
+  }
+
   @media screen and (max-width: 767px) {
+
     .header__top {
       --header-logo: {{ logo_mobile_height }}px;
+
+      min-height: 58px !important;
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
     }
+
   }
+
 {% endstyle %}
 
 <main-header id="site-header" class="site-header" data-js-inert {% if section.settings.sticky_header %} data-sticky-header {% endif %}>
