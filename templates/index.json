@@ -264,14 +264,14 @@
         "1654076252f525bcb1-1": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Coziest season ever</strong></p>",
+            "text": "",
             "text_size": "regular"
           }
         },
         "1654076252f525bcb1-0": {
           "type": "title",
           "settings": {
-            "title": "The best matching gift you can have for this winter ❄️✨",
+            "title": "The best daily routine for a healthier, younger YOU!",
             "title_size": "h3",
             "seo_h_tag": "h2"
           }
@@ -325,8 +325,8 @@
         "judge_me_reviews_review_widget_homepage_tVtpCi": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "product": "",
-            "review_data": "sample_data",
+            "product": "nutrea-premium-collagen-strawberry-flavored",
+            "review_data": "real_data",
             "max_width": 1200
           }
         }
