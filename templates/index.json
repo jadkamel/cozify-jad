@@ -207,14 +207,6 @@
             "nutrea_buy_gap": 10,
             "nutrea_buy_gap_mobile": 8
           }
-        },
-        "space_UJQf3K": {
-          "type": "space",
-          "settings": {}
-        },
-        "description_NMFgA8": {
-          "type": "description",
-          "settings": {}
         }
       },
       "block_order": [
@@ -223,9 +215,7 @@
         "nutrea_benefits_Y84bEw",
         "variant_picker_y8Agrm",
         "space_YBAbQr",
-        "buy_buttons_PEki74",
-        "space_UJQf3K",
-        "description_NMFgA8"
+        "buy_buttons_PEki74"
       ],
       "custom_css": [],
       "name": "t:sections.featured-product.name",
@@ -315,6 +305,28 @@
         "color_hide_shadow": false
       }
     },
+    "17835132512ae03ea4": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_homepage_GbrHm8": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "nutrea-premium-collagen-strawberry-flavored"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_homepage_GbrHm8"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "section_heading_layout": "section-heading--left",
+        "full_width": false,
+        "remove_margin": false,
+        "seo_h_tag": "h2"
+      }
+    },
     "16553621956de397b6": {
       "type": "testimonials",
       "blocks": {
@@ -381,6 +393,7 @@
     "featured_product_VAqWcF",
     "custom_liquid_EieYPh",
     "165407625224b5d2af",
+    "17835132512ae03ea4",
     "16553621956de397b6",
     "1783457495ffbd9dbb"
   ]
