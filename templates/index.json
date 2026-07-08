@@ -86,6 +86,38 @@
             "seo_h_tag": "h2"
           }
         },
+        "google_review_LCYyn6": {
+          "type": "google-review",
+          "settings": {
+            "eyebrow_text": "CUSTOMER LOVE",
+            "review_text": "My body finally thanks me.",
+            "rating": "4.6",
+            "rating_prefix": "Rated",
+            "on_text": "on",
+            "google_url": "",
+            "background_color": "#fbf8f4",
+            "border_color": "#d8c7b9",
+            "quote_color": "#2b211c",
+            "meta_color": "#4a3a31",
+            "star_color": "#f2b632",
+            "star_empty_color": "#e6ddd5",
+            "border_style": "solid",
+            "border_width": 1,
+            "border_radius": 14,
+            "padding_vertical": 10,
+            "padding_horizontal": 14,
+            "mobile_padding_vertical": 6,
+            "mobile_padding_horizontal": 12,
+            "quote_size": 14,
+            "meta_size": 12,
+            "star_size": 17,
+            "google_icon_size": 24,
+            "mobile_quote_size": 13,
+            "mobile_meta_size": 11,
+            "mobile_star_size": 16,
+            "mobile_google_icon_size": 22
+          }
+        },
         "variant_picker_y8Agrm": {
           "type": "variant_picker",
           "settings": {
@@ -103,7 +135,6 @@
             "show_price": true,
             "show_quantity_selector": true,
             "show_preorder": false,
-            "show_dynamic_checkout": true,
             "show_gift_card_recipient": false,
             "color_text_buttons": "rgba(0,0,0,0)",
             "color_accent_buttons": "rgba(0,0,0,0)",
@@ -121,6 +152,7 @@
       },
       "block_order": [
         "title_TWwhi3",
+        "google_review_LCYyn6",
         "variant_picker_y8Agrm",
         "space_YBAbQr",
         "buy_buttons_PEki74",
@@ -317,7 +349,6 @@
             "show_price": true,
             "show_quantity_selector": true,
             "show_preorder": false,
-            "show_dynamic_checkout": true,
             "show_gift_card_recipient": false,
             "color_text_buttons": "rgba(0,0,0,0)",
             "color_accent_buttons": "rgba(0,0,0,0)",
