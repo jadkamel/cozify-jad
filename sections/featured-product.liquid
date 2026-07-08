@@ -196,163 +196,129 @@
 
 
   /* =====================================================
-     NUTREA BENEFIT SIGNALS
+     NUTREA SLIM 5 BENEFITS
   ===================================================== */
 
-  .nutrea-benefit-signals {
-    width: 100%;
-    padding: var(--nbs-space-y) 0;
+  .nutrea-slim-benefits {
+    width: min(100%, var(--nsl-max-width));
+    padding: var(--nsl-space-y) 0;
   }
 
-  .nutrea-benefit-signals__header {
-    margin-bottom: 12px;
+  .nutrea-slim-benefits__header {
+    margin-bottom: var(--nsl-heading-gap);
   }
 
-  .nutrea-benefit-signals__eyebrow {
+  .nutrea-slim-benefits__eyebrow {
     display: block;
     margin-bottom: 6px;
-    color: var(--nbs-accent);
-    font-size: 10px;
+    color: var(--nsl-accent);
+    font-size: var(--nsl-eyebrow-size);
     font-weight: 700;
     line-height: 1;
     letter-spacing: 1.35px;
     text-transform: uppercase;
   }
 
-  .nutrea-benefit-signals__heading {
+  .nutrea-slim-benefits__heading {
     margin: 0;
-    color: var(--nbs-title);
-    font-size: var(--nbs-heading-size);
+    color: var(--nsl-text);
+    font-size: var(--nsl-heading-size);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.35px;
   }
 
-  .nutrea-benefit-signals__grid {
-    display: grid;
-    grid-template-columns: repeat(var(--nbs-columns), minmax(0, 1fr));
-    gap: var(--nbs-gap);
+  .nutrea-slim-benefits__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nsl-row-gap);
   }
 
-  .nutrea-benefit-signal {
-    position: relative;
+  .nutrea-slim-benefit {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 12px;
-    min-width: 0;
-    padding: var(--nbs-card-padding);
-    background: var(--nbs-card-bg);
-    border: 1px solid var(--nbs-border);
-    border-radius: var(--nbs-radius);
-    overflow: hidden;
-    box-sizing: border-box;
+    gap: var(--nsl-icon-gap);
+    padding: var(--nsl-row-padding-y) 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 
-  .nutrea-benefit-signal::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 3px;
-    background: var(--nbs-accent);
-    opacity: 0.82;
-  }
-
-  .nutrea-benefit-signal::after {
-    content: "";
-    position: absolute;
-    top: -34px;
-    right: -34px;
-    width: 82px;
-    height: 82px;
-    border-radius: 50%;
-    background: var(--nbs-icon-bg);
-    opacity: 0.7;
-    pointer-events: none;
-  }
-
-  .nutrea-benefit-signal__icon {
-    position: relative;
-    z-index: 1;
+  .nutrea-slim-benefit__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--nbs-icon-box);
-    height: var(--nbs-icon-box);
-    color: var(--nbs-icon);
-    background: var(--nbs-icon-bg);
-    border: 1px solid var(--nbs-icon-border);
-    border-radius: 999px;
-    font-size: var(--nbs-icon-size);
-    line-height: 1;
+    width: var(--nsl-icon-box);
+    height: var(--nsl-icon-box);
     flex: 0 0 auto;
+    color: var(--nsl-icon-color);
+    background: var(--nsl-icon-bg);
+    border: 0;
+    border-radius: 999px;
+    font-size: var(--nsl-icon-size);
+    line-height: 1;
   }
 
-  .nutrea-benefit-signal__copy {
-    position: relative;
-    z-index: 1;
+  .nutrea-slim-benefit__text {
     min-width: 0;
-  }
-
-  .nutrea-benefit-signal__title {
-    display: block;
-    margin: 0 0 3px;
-    color: var(--nbs-title);
-    font-size: var(--nbs-title-size);
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.15px;
-  }
-
-  .nutrea-benefit-signal__caption {
-    display: block;
-    color: var(--nbs-muted);
-    font-size: var(--nbs-caption-size);
-    font-weight: 400;
+    color: var(--nsl-text);
+    font-size: var(--nsl-font-size);
+    font-weight: var(--nsl-font-weight);
     line-height: 1.35;
+    letter-spacing: var(--nsl-letter-spacing);
   }
 
-  .nutrea-benefit-signal__number {
-    position: relative;
-    z-index: 1;
-    align-self: start;
-    color: var(--nbs-accent);
+  .nutrea-slim-benefit__text p {
+    margin: 0;
+  }
+
+  .nutrea-slim-benefit__text strong {
+    color: var(--nsl-highlight);
+    font-weight: var(--nsl-highlight-weight);
+  }
+
+  .nutrea-slim-benefit__number {
+    color: var(--nsl-number);
     font-size: 9px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: 1px;
-    opacity: 0.58;
+    opacity: 0.62;
+  }
+
+  .nutrea-slim-benefits--hover .nutrea-slim-benefit {
+    transition: transform 0.18s ease;
+  }
+
+  .nutrea-slim-benefits--hover .nutrea-slim-benefit:hover {
+    transform: translateX(3px);
   }
 
   @media screen and (max-width: 749px) {
-    .nutrea-benefit-signals__grid {
-      grid-template-columns: repeat(var(--nbs-mobile-columns), minmax(0, 1fr));
-      gap: var(--nbs-mobile-gap);
+    .nutrea-slim-benefits__heading {
+      font-size: var(--nsl-mobile-heading-size);
     }
 
-    .nutrea-benefit-signals__heading {
-      font-size: var(--nbs-mobile-heading-size);
+    .nutrea-slim-benefit {
+      gap: var(--nsl-icon-gap);
     }
 
-    .nutrea-benefit-signal {
-      grid-template-columns: auto 1fr;
-      gap: 9px;
-      padding: var(--nbs-mobile-card-padding);
+    .nutrea-slim-benefit__icon {
+      width: var(--nsl-mobile-icon-box);
+      height: var(--nsl-mobile-icon-box);
+      font-size: var(--nsl-mobile-icon-size);
     }
 
-    .nutrea-benefit-signal__number {
+    .nutrea-slim-benefit__text {
+      font-size: var(--nsl-mobile-font-size);
+    }
+
+    .nutrea-slim-benefit__number {
       display: none;
     }
-
-    .nutrea-benefit-signal__title {
-      font-size: var(--nbs-mobile-title-size);
-    }
-
-    .nutrea-benefit-signal__caption {
-      font-size: var(--nbs-mobile-caption-size);
-    }
   }
-
 {% endstyle %}
 
 
@@ -790,97 +756,88 @@
           </div>
 
 
+
         {%- when 'nutrea-benefits' -%}
 
           <div
-            class="nutrea-benefit-signals"
+            class="
+              nutrea-slim-benefits
+              {% if block.settings.enable_hover %}nutrea-slim-benefits--hover{% endif %}
+            "
             style="
-              --nbs-space-y: {{ block.settings.space_y }}px;
-              --nbs-columns: {{ block.settings.columns_desktop }};
-              --nbs-mobile-columns: {{ block.settings.columns_mobile }};
-              --nbs-gap: {{ block.settings.gap_desktop }}px;
-              --nbs-mobile-gap: {{ block.settings.gap_mobile }}px;
+              --nsl-max-width: {{ block.settings.max_width }}px;
+              --nsl-space-y: {{ block.settings.space_y }}px;
+              --nsl-row-gap: {{ block.settings.row_gap }}px;
+              --nsl-row-padding-y: {{ block.settings.row_padding_y }}px;
+              --nsl-icon-gap: {{ block.settings.icon_gap }}px;
+              --nsl-heading-gap: {{ block.settings.heading_gap }}px;
 
-              --nbs-card-bg: {{ block.settings.card_background }};
-              --nbs-border: {{ block.settings.border_color }};
-              --nbs-accent: {{ block.settings.accent_color }};
-              --nbs-title: {{ block.settings.title_color }};
-              --nbs-muted: {{ block.settings.caption_color }};
+              --nsl-text: {{ block.settings.text_color }};
+              --nsl-highlight: {{ block.settings.highlight_color }};
+              --nsl-accent: {{ block.settings.accent_color }};
+              --nsl-icon-color: {{ block.settings.icon_color }};
+              --nsl-icon-bg: {{ block.settings.icon_background }};
+              --nsl-number: {{ block.settings.number_color }};
 
-              --nbs-icon: {{ block.settings.icon_color }};
-              --nbs-icon-bg: {{ block.settings.icon_background }};
-              --nbs-icon-border: {{ block.settings.icon_border }};
+              --nsl-font-size: {{ block.settings.font_size }}px;
+              --nsl-mobile-font-size: {{ block.settings.mobile_font_size }}px;
+              --nsl-font-weight: {{ block.settings.font_weight }};
+              --nsl-highlight-weight: {{ block.settings.highlight_weight }};
+              --nsl-letter-spacing: {{ block.settings.letter_spacing | divided_by: 10.0 }}px;
 
-              --nbs-radius: {{ block.settings.radius }}px;
-              --nbs-card-padding: {{ block.settings.card_padding }}px;
-              --nbs-mobile-card-padding: {{ block.settings.mobile_card_padding }}px;
-              --nbs-icon-box: {{ block.settings.icon_box_size }}px;
-              --nbs-icon-size: {{ block.settings.icon_size }}px;
+              --nsl-icon-box: {{ block.settings.icon_box_size }}px;
+              --nsl-mobile-icon-box: {{ block.settings.mobile_icon_box_size }}px;
+              --nsl-icon-size: {{ block.settings.icon_size }}px;
+              --nsl-mobile-icon-size: {{ block.settings.mobile_icon_size }}px;
 
-              --nbs-heading-size: {{ block.settings.heading_size }}px;
-              --nbs-title-size: {{ block.settings.title_size }}px;
-              --nbs-caption-size: {{ block.settings.caption_size }}px;
-              --nbs-mobile-heading-size: {{ block.settings.mobile_heading_size }}px;
-              --nbs-mobile-title-size: {{ block.settings.mobile_title_size }}px;
-              --nbs-mobile-caption-size: {{ block.settings.mobile_caption_size }}px;
+              --nsl-eyebrow-size: {{ block.settings.eyebrow_size }}px;
+              --nsl-heading-size: {{ block.settings.heading_size }}px;
+              --nsl-mobile-heading-size: {{ block.settings.mobile_heading_size }}px;
             "
             {{ block.shopify_attributes }}
           >
 
-            {%- if block.settings.eyebrow != blank or block.settings.heading != blank -%}
-              <div class="nutrea-benefit-signals__header">
+            {%- if block.settings.show_heading and block.settings.heading != blank -%}
+              <div class="nutrea-slim-benefits__header">
+
                 {%- if block.settings.eyebrow != blank -%}
-                  <span class="nutrea-benefit-signals__eyebrow">
+                  <span class="nutrea-slim-benefits__eyebrow">
                     {{ block.settings.eyebrow | escape }}
                   </span>
                 {%- endif -%}
 
-                {%- if block.settings.heading != blank -%}
-                  <h3 class="nutrea-benefit-signals__heading">
-                    {{ block.settings.heading | escape }}
-                  </h3>
-                {%- endif -%}
+                <h3 class="nutrea-slim-benefits__heading">
+                  {{ block.settings.heading | escape }}
+                </h3>
+
               </div>
             {%- endif -%}
 
-            <div class="nutrea-benefit-signals__grid">
+            <div class="nutrea-slim-benefits__list">
 
-              {%- for i in (1..4) -%}
+              {%- for i in (1..5) -%}
                 {%- liquid
                   assign icon_key = 'item_' | append: i | append: '_icon'
-                  assign title_key = 'item_' | append: i | append: '_title'
-                  assign caption_key = 'item_' | append: i | append: '_caption'
+                  assign text_key = 'item_' | append: i | append: '_text'
 
                   assign item_icon = block.settings[icon_key]
-                  assign item_title = block.settings[title_key]
-                  assign item_caption = block.settings[caption_key]
-
+                  assign item_text = block.settings[text_key]
                   assign item_number = '0' | append: i
                 -%}
 
-                {%- if item_title != blank or item_caption != blank -%}
-                  <div class="nutrea-benefit-signal">
+                {%- if item_text != blank -%}
+                  <div class="nutrea-slim-benefit">
 
-                    <span class="nutrea-benefit-signal__icon" aria-hidden="true">
+                    <span class="nutrea-slim-benefit__icon" aria-hidden="true">
                       {{ item_icon | escape }}
                     </span>
 
-                    <div class="nutrea-benefit-signal__copy">
-                      {%- if item_title != blank -%}
-                        <strong class="nutrea-benefit-signal__title">
-                          {{ item_title | escape }}
-                        </strong>
-                      {%- endif -%}
-
-                      {%- if item_caption != blank -%}
-                        <span class="nutrea-benefit-signal__caption">
-                          {{ item_caption | escape }}
-                        </span>
-                      {%- endif -%}
+                    <div class="nutrea-slim-benefit__text">
+                      {{ item_text }}
                     </div>
 
                     {%- if block.settings.show_numbers -%}
-                      <span class="nutrea-benefit-signal__number">
+                      <span class="nutrea-slim-benefit__number">
                         {{ item_number }}
                       </span>
                     {%- endif -%}
@@ -892,7 +849,6 @@
 
             </div>
           </div>
-
         {%- when 'price' -%}
 
           <div class="text-size--xlarge" {{ block.shopify_attributes }} data-js-product-price-compact>
@@ -2183,138 +2139,130 @@
     },
     {
       "type": "nutrea-benefits",
-      "name": "Nutrea benefit signals",
+      "name": "Nutrea slim 5 benefits",
       "limit": 1,
       "settings": [
         {
           "type": "header",
-          "content": "Content"
+          "content": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_heading",
+          "label": "Show heading",
+          "default": false
         },
         {
           "type": "text",
           "id": "eyebrow",
           "label": "Small label",
-          "default": "WHY YOUR DAILY SCOOP FEELS DIFFERENT"
+          "default": "WHY NUTREA"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Heading",
-          "default": "Four kinds of daily support."
+          "default": "Five reasons to make it your daily ritual."
         },
         {
           "type": "checkbox",
           "id": "show_numbers",
-          "label": "Show 01, 02, 03, 04",
-          "default": true
+          "label": "Show 01, 02, 03, 04, 05",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Benefit 1"
         },
         {
           "type": "text",
           "id": "item_1_icon",
-          "label": "Benefit 1 icon or symbol",
+          "label": "Icon or symbol",
           "default": "✦"
         },
         {
-          "type": "text",
-          "id": "item_1_title",
-          "label": "Benefit 1 title",
-          "default": "Skin that feels supported"
+          "type": "richtext",
+          "id": "item_1_text",
+          "label": "Benefit text",
+          "default": "<p>Supports <strong>skin elasticity</strong> and natural glow</p>"
         },
         {
-          "type": "text",
-          "id": "item_1_caption",
-          "label": "Benefit 1 caption",
-          "default": "Collagen support for elasticity, hair and nails."
+          "type": "header",
+          "content": "Benefit 2"
         },
         {
           "type": "text",
           "id": "item_2_icon",
-          "label": "Benefit 2 icon or symbol",
+          "label": "Icon or symbol",
           "default": "◌"
         },
         {
-          "type": "text",
-          "id": "item_2_title",
-          "label": "Benefit 2 title",
-          "default": "Hydration with a purpose"
+          "type": "richtext",
+          "id": "item_2_text",
+          "label": "Benefit text",
+          "default": "<p>Helps maintain <strong>daily hydration</strong> and mineral balance</p>"
         },
         {
-          "type": "text",
-          "id": "item_2_caption",
-          "label": "Benefit 2 caption",
-          "default": "Electrolytes support fluid and mineral balance."
+          "type": "header",
+          "content": "Benefit 3"
         },
         {
           "type": "text",
           "id": "item_3_icon",
-          "label": "Benefit 3 icon or symbol",
+          "label": "Icon or symbol",
           "default": "◇"
         },
         {
-          "type": "text",
-          "id": "item_3_title",
-          "label": "Benefit 3 title",
-          "default": "Comfort in motion"
+          "type": "richtext",
+          "id": "item_3_text",
+          "label": "Benefit text",
+          "default": "<p>Supports <strong>joint comfort</strong> and everyday mobility</p>"
         },
         {
-          "type": "text",
-          "id": "item_3_caption",
-          "label": "Benefit 3 caption",
-          "default": "Daily support for joints and everyday mobility."
+          "type": "header",
+          "content": "Benefit 4"
         },
         {
           "type": "text",
           "id": "item_4_icon",
-          "label": "Benefit 4 icon or symbol",
+          "label": "Icon or symbol",
           "default": "↗"
         },
         {
-          "type": "text",
-          "id": "item_4_title",
-          "label": "Benefit 4 title",
-          "default": "Recovery, made simple"
-        },
-        {
-          "type": "text",
-          "id": "item_4_caption",
-          "label": "Benefit 4 caption",
-          "default": "Protein and electrolytes support your daily routine."
+          "type": "richtext",
+          "id": "item_4_text",
+          "label": "Benefit text",
+          "default": "<p>Supports <strong>daily recovery</strong> after movement</p>"
         },
         {
           "type": "header",
-          "content": "Layout"
+          "content": "Benefit 5"
         },
         {
-          "type": "select",
-          "id": "columns_desktop",
-          "label": "Desktop columns",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 column"
-            },
-            {
-              "value": "2",
-              "label": "2 columns"
-            }
-          ],
-          "default": "2"
+          "type": "text",
+          "id": "item_5_icon",
+          "label": "Icon or symbol",
+          "default": "✧"
         },
         {
-          "type": "select",
-          "id": "columns_mobile",
-          "label": "Mobile columns",
-          "options": [
-            {
-              "value": "1",
-              "label": "1 column"
-            },
-            {
-              "value": "2",
-              "label": "2 columns"
-            }
-          ],
-          "default": "1"
+          "type": "richtext",
+          "id": "item_5_text",
+          "label": "Benefit text",
+          "default": "<p>Supports <strong>stronger hair &amp; nails</strong> from within</p>"
+        },
+        {
+          "type": "header",
+          "content": "Spacing and layout"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "label": "Maximum width",
+          "min": 320,
+          "max": 900,
+          "step": 10,
+          "unit": "px",
+          "default": 720
         },
         {
           "type": "range",
@@ -2328,23 +2276,49 @@
         },
         {
           "type": "range",
-          "id": "gap_desktop",
-          "label": "Desktop gap",
-          "min": 4,
-          "max": 30,
+          "id": "row_gap",
+          "label": "Space between benefits",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "row_padding_y",
+          "label": "Vertical row padding",
+          "min": 0,
+          "max": 16,
+          "step": 1,
+          "unit": "px",
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "icon_gap",
+          "label": "Icon-to-text gap",
+          "min": 6,
+          "max": 24,
           "step": 1,
           "unit": "px",
           "default": 10
         },
         {
           "type": "range",
-          "id": "gap_mobile",
-          "label": "Mobile gap",
+          "id": "heading_gap",
+          "label": "Space below heading",
           "min": 4,
-          "max": 24,
+          "max": 30,
           "step": 1,
           "unit": "px",
-          "default": 8
+          "default": 12
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_hover",
+          "label": "Subtle slide on hover",
+          "default": true
         },
         {
           "type": "header",
@@ -2352,109 +2326,162 @@
         },
         {
           "type": "color",
-          "id": "card_background",
-          "label": "Card background",
-          "default": "#FBF8F4"
+          "id": "text_color",
+          "label": "Regular text",
+          "default": "#3E312A"
         },
         {
           "type": "color",
-          "id": "border_color",
-          "label": "Card border",
-          "default": "#E1D4C8"
-        },
-        {
-          "type": "color",
-          "id": "accent_color",
-          "label": "Accent",
-          "default": "#B08968"
-        },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title",
+          "id": "highlight_color",
+          "label": "Bold highlighted text",
           "default": "#2B211C"
         },
         {
           "type": "color",
-          "id": "caption_color",
-          "label": "Caption",
-          "default": "#6D5B50"
+          "id": "accent_color",
+          "label": "Heading accent",
+          "default": "#B08968"
         },
         {
           "type": "color",
           "id": "icon_color",
-          "label": "Icon",
+          "label": "Icon color",
           "default": "#B08968"
         },
         {
           "type": "color",
           "id": "icon_background",
-          "label": "Icon background",
-          "default": "#FFFDFC"
+          "label": "Icon circle background",
+          "default": "#F6EEE7"
         },
         {
           "type": "color",
-          "id": "icon_border",
-          "label": "Icon border",
-          "default": "#DECFC2"
+          "id": "number_color",
+          "label": "Number color",
+          "default": "#B08968"
         },
         {
           "type": "header",
-          "content": "Shape and size"
+          "content": "Typography and icon size"
         },
         {
           "type": "range",
-          "id": "radius",
-          "label": "Card corner radius",
-          "min": 0,
-          "max": 30,
-          "step": 1,
-          "unit": "px",
-          "default": 14
-        },
-        {
-          "type": "range",
-          "id": "card_padding",
-          "label": "Desktop card padding",
-          "min": 8,
-          "max": 30,
-          "step": 1,
-          "unit": "px",
-          "default": 14
-        },
-        {
-          "type": "range",
-          "id": "mobile_card_padding",
-          "label": "Mobile card padding",
-          "min": 8,
+          "id": "font_size",
+          "label": "Desktop text size",
+          "min": 12,
           "max": 24,
           "step": 1,
           "unit": "px",
-          "default": 12
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "mobile_font_size",
+          "label": "Mobile text size",
+          "min": 11,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "default": 15
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Regular text weight",
+          "options": [
+            {
+              "value": "300",
+              "label": "Light"
+            },
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            }
+          ],
+          "default": "400"
+        },
+        {
+          "type": "select",
+          "id": "highlight_weight",
+          "label": "Bold text weight",
+          "options": [
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semi bold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ],
+          "default": "600"
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing",
+          "label": "Letter spacing",
+          "min": -5,
+          "max": 15,
+          "step": 1,
+          "default": 0
         },
         {
           "type": "range",
           "id": "icon_box_size",
-          "label": "Icon circle size",
-          "min": 28,
-          "max": 64,
+          "label": "Desktop icon circle size",
+          "min": 24,
+          "max": 52,
           "step": 1,
           "unit": "px",
-          "default": 38
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "mobile_icon_box_size",
+          "label": "Mobile icon circle size",
+          "min": 22,
+          "max": 46,
+          "step": 1,
+          "unit": "px",
+          "default": 28
         },
         {
           "type": "range",
           "id": "icon_size",
-          "label": "Icon symbol size",
-          "min": 12,
-          "max": 32,
+          "label": "Desktop icon size",
+          "min": 10,
+          "max": 28,
           "step": 1,
           "unit": "px",
-          "default": 18
+          "default": 15
         },
         {
-          "type": "header",
-          "content": "Typography"
+          "type": "range",
+          "id": "mobile_icon_size",
+          "label": "Mobile icon size",
+          "min": 9,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "eyebrow_size",
+          "label": "Small label size",
+          "min": 8,
+          "max": 16,
+          "step": 1,
+          "unit": "px",
+          "default": 10
         },
         {
           "type": "range",
@@ -2468,26 +2495,6 @@
         },
         {
           "type": "range",
-          "id": "title_size",
-          "label": "Desktop benefit title",
-          "min": 12,
-          "max": 24,
-          "step": 1,
-          "unit": "px",
-          "default": 15
-        },
-        {
-          "type": "range",
-          "id": "caption_size",
-          "label": "Desktop caption",
-          "min": 10,
-          "max": 18,
-          "step": 1,
-          "unit": "px",
-          "default": 12
-        },
-        {
-          "type": "range",
           "id": "mobile_heading_size",
           "label": "Mobile heading size",
           "min": 15,
@@ -2495,26 +2502,6 @@
           "step": 1,
           "unit": "px",
           "default": 20
-        },
-        {
-          "type": "range",
-          "id": "mobile_title_size",
-          "label": "Mobile benefit title",
-          "min": 11,
-          "max": 20,
-          "step": 1,
-          "unit": "px",
-          "default": 14
-        },
-        {
-          "type": "range",
-          "id": "mobile_caption_size",
-          "label": "Mobile caption",
-          "min": 9,
-          "max": 16,
-          "step": 1,
-          "unit": "px",
-          "default": 11
         }
       ]
     },
