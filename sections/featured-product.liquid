@@ -829,7 +829,35 @@
 
           {%- unless product == blank -%}
 
-            <div class="product-actions" {{ block.shopify_attributes }}>
+            <div
+              class="product-actions nutrea-product-actions"
+              style="
+                --nutrea-atc-bg: {{ block.settings.nutrea_atc_bg }};
+                --nutrea-atc-hover-bg: {{ block.settings.nutrea_atc_hover_bg }};
+                --nutrea-atc-text: {{ block.settings.nutrea_atc_text }};
+                --nutrea-atc-hover-text: {{ block.settings.nutrea_atc_hover_text }};
+                --nutrea-atc-border: {{ block.settings.nutrea_atc_border }};
+                --nutrea-atc-hover-border: {{ block.settings.nutrea_atc_hover_border }};
+                --nutrea-atc-radius: {{ block.settings.nutrea_atc_radius }}px;
+                --nutrea-atc-height: {{ block.settings.nutrea_atc_height }}px;
+                --nutrea-atc-font-size: {{ block.settings.nutrea_atc_font_size }}px;
+                --nutrea-atc-font-weight: {{ block.settings.nutrea_atc_font_weight }};
+                --nutrea-atc-letter-spacing: {{ block.settings.nutrea_atc_letter_spacing | divided_by: 10.0 }}px;
+                --nutrea-qty-bg: {{ block.settings.nutrea_qty_bg }};
+                --nutrea-qty-border: {{ block.settings.nutrea_qty_border }};
+                --nutrea-qty-text: {{ block.settings.nutrea_qty_text }};
+                --nutrea-qty-hover-bg: {{ block.settings.nutrea_qty_hover_bg }};
+                --nutrea-qty-radius: {{ block.settings.nutrea_qty_radius }}px;
+                --nutrea-qty-height: {{ block.settings.nutrea_qty_height }}px;
+                --nutrea-qty-control-width: {{ block.settings.nutrea_qty_control_width }}px;
+                --nutrea-qty-number-width: {{ block.settings.nutrea_qty_number_width }}px;
+                --nutrea-qty-symbol-size: {{ block.settings.nutrea_qty_symbol_size }}px;
+                --nutrea-qty-number-size: {{ block.settings.nutrea_qty_number_size }}px;
+                --nutrea-buy-gap: {{ block.settings.nutrea_buy_gap }}px;
+                --nutrea-buy-gap-mobile: {{ block.settings.nutrea_buy_gap_mobile }}px;
+              "
+              {{ block.shopify_attributes }}
+            >
 
               {%- unless block.settings.show_price -%}
                 <style type="text/css">
@@ -933,16 +961,6 @@
                         </span>
                       </button>
 
-                      {%- liquid
-                        if product.gift_card? and block.settings.show_gift_card_recipient
-                          assign show_dynamic_checkout = false
-                        else 
-                          assign show_dynamic_checkout = block.settings.show_dynamic_checkout
-                        endif
-                        if show_dynamic_checkout
-                          echo form | payment_button
-                        endif
-                      -%}
 
                     </div>
                     
@@ -1054,183 +1072,129 @@
 {%- endif -%}
 
 
-{% style %}
+<style>
   /* =====================================================
-     NUTREA FEATURED PRODUCT
-     PREMIUM ADD TO CART + QUANTITY SELECTOR
+     NUTREA BUY AREA — EDITABLE FROM THE BUY BUTTONS BLOCK
   ===================================================== */
 
-  #product-{{ section.id }} .product__cart-functions .flex-buttons {
+  #product-{{ section.id }} .nutrea-product-actions .flex-buttons {
     display: flex;
     align-items: stretch;
-    gap: 10px;
+    gap: var(--nutrea-buy-gap, 10px);
   }
 
-  /* Add to cart button */
-  #product-{{ section.id }} .add-to-cart.button {
-    min-height: 52px !important;
-    padding: 11px 24px !important;
-    background: #B08968 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #B08968 !important;
-    border-radius: 12px !important;
+  #product-{{ section.id }} .nutrea-product-actions .add-to-cart.button {
+    min-height: var(--nutrea-atc-height, 52px) !important;
+    padding: 10px 24px !important;
+    background: var(--nutrea-atc-bg, #B08968) !important;
+    color: var(--nutrea-atc-text, #FFFFFF) !important;
+    border: 1px solid var(--nutrea-atc-border, #B08968) !important;
+    border-radius: var(--nutrea-atc-radius, 12px) !important;
     box-shadow: none !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.2px !important;
+    font-size: var(--nutrea-atc-font-size, 16px) !important;
+    font-weight: var(--nutrea-atc-font-weight, 500) !important;
+    letter-spacing: var(--nutrea-atc-letter-spacing, 0.2px) !important;
     text-transform: none !important;
-    transition:
-      background 0.22s ease,
-      border-color 0.22s ease,
-      transform 0.18s ease !important;
+    transition: background .22s ease, border-color .22s ease, color .22s ease, transform .18s ease !important;
   }
 
-  #product-{{ section.id }} .add-to-cart.button:hover {
-    background: #9B7659 !important;
-    border-color: #9B7659 !important;
+  #product-{{ section.id }} .nutrea-product-actions .add-to-cart.button:hover {
+    background: var(--nutrea-atc-hover-bg, #9B7659) !important;
+    color: var(--nutrea-atc-hover-text, #FFFFFF) !important;
+    border-color: var(--nutrea-atc-hover-border, #9B7659) !important;
     transform: translateY(-1px);
   }
 
-  #product-{{ section.id }} .add-to-cart.button .button__text {
+  #product-{{ section.id }} .nutrea-product-actions .add-to-cart.button .button__text {
+    color: inherit !important;
     font-size: inherit !important;
     font-weight: inherit !important;
     letter-spacing: inherit !important;
     text-transform: none !important;
   }
 
-  /* Connected quantity selector container */
-  #product-{{ section.id }} product-quantity,
-  #product-{{ section.id }} .product-quantity,
-  #product-{{ section.id }} .quantity-selector,
-  #product-{{ section.id }} .quantity {
+  #product-{{ section.id }} .nutrea-product-actions product-quantity,
+  #product-{{ section.id }} .nutrea-product-actions .product-quantity,
+  #product-{{ section.id }} .nutrea-product-actions .quantity-selector,
+  #product-{{ section.id }} .nutrea-product-actions .quantity {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 52px !important;
-    height: 52px !important;
-    background: #FBF8F4 !important;
-    border: 1px solid #D8C7B9 !important;
-    border-radius: 12px !important;
+    min-height: var(--nutrea-qty-height, 52px) !important;
+    height: var(--nutrea-qty-height, 52px) !important;
+    background: var(--nutrea-qty-bg, #FBF8F4) !important;
+    border: 1px solid var(--nutrea-qty-border, #D8C7B9) !important;
+    border-radius: var(--nutrea-qty-radius, 12px) !important;
     overflow: hidden !important;
     box-shadow: none !important;
   }
 
-  /* Quantity buttons */
-  #product-{{ section.id }} product-quantity button,
-  #product-{{ section.id }} .product-quantity button,
-  #product-{{ section.id }} .quantity-selector button,
-  #product-{{ section.id }} .quantity button {
-    width: 42px !important;
-    min-width: 42px !important;
-    height: 52px !important;
-    min-height: 52px !important;
+  #product-{{ section.id }} .nutrea-product-actions product-quantity button,
+  #product-{{ section.id }} .nutrea-product-actions .product-quantity button,
+  #product-{{ section.id }} .nutrea-product-actions .quantity-selector button,
+  #product-{{ section.id }} .nutrea-product-actions .quantity button {
+    width: var(--nutrea-qty-control-width, 42px) !important;
+    min-width: var(--nutrea-qty-control-width, 42px) !important;
+    height: var(--nutrea-qty-height, 52px) !important;
+    min-height: var(--nutrea-qty-height, 52px) !important;
     padding: 0 !important;
     margin: 0 !important;
     background: transparent !important;
-    color: #4A382E !important;
+    color: var(--nutrea-qty-text, #4A382E) !important;
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    font-size: 22px !important;
+    font-size: var(--nutrea-qty-symbol-size, 22px) !important;
     font-weight: 300 !important;
     line-height: 1 !important;
   }
 
-  #product-{{ section.id }} product-quantity button:hover,
-  #product-{{ section.id }} .product-quantity button:hover,
-  #product-{{ section.id }} .quantity-selector button:hover,
-  #product-{{ section.id }} .quantity button:hover {
-    background: rgba(176, 137, 104, 0.08) !important;
+  #product-{{ section.id }} .nutrea-product-actions product-quantity button:hover,
+  #product-{{ section.id }} .nutrea-product-actions .product-quantity button:hover,
+  #product-{{ section.id }} .nutrea-product-actions .quantity-selector button:hover,
+  #product-{{ section.id }} .nutrea-product-actions .quantity button:hover {
+    background: var(--nutrea-qty-hover-bg, #F4ECE5) !important;
   }
 
-  /* Quantity input / number */
-  #product-{{ section.id }} product-quantity input,
-  #product-{{ section.id }} .product-quantity input,
-  #product-{{ section.id }} .quantity-selector input,
-  #product-{{ section.id }} .quantity input {
-    width: 36px !important;
-    min-width: 36px !important;
-    height: 52px !important;
-    min-height: 52px !important;
+  #product-{{ section.id }} .nutrea-product-actions product-quantity input,
+  #product-{{ section.id }} .nutrea-product-actions .product-quantity input,
+  #product-{{ section.id }} .nutrea-product-actions .quantity-selector input,
+  #product-{{ section.id }} .nutrea-product-actions .quantity input {
+    width: var(--nutrea-qty-number-width, 36px) !important;
+    min-width: var(--nutrea-qty-number-width, 36px) !important;
+    height: var(--nutrea-qty-height, 52px) !important;
+    min-height: var(--nutrea-qty-height, 52px) !important;
     padding: 0 !important;
     margin: 0 !important;
     background: transparent !important;
-    color: #2B211C !important;
+    color: var(--nutrea-qty-text, #2B211C) !important;
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     text-align: center !important;
-    font-size: 15px !important;
+    font-size: var(--nutrea-qty-number-size, 15px) !important;
     font-weight: 500 !important;
     appearance: textfield !important;
     -moz-appearance: textfield !important;
   }
 
-  #product-{{ section.id }} product-quantity input::-webkit-outer-spin-button,
-  #product-{{ section.id }} product-quantity input::-webkit-inner-spin-button,
-  #product-{{ section.id }} .product-quantity input::-webkit-outer-spin-button,
-  #product-{{ section.id }} .product-quantity input::-webkit-inner-spin-button,
-  #product-{{ section.id }} .quantity-selector input::-webkit-outer-spin-button,
-  #product-{{ section.id }} .quantity-selector input::-webkit-inner-spin-button,
-  #product-{{ section.id }} .quantity input::-webkit-outer-spin-button,
-  #product-{{ section.id }} .quantity input::-webkit-inner-spin-button {
+  #product-{{ section.id }} .nutrea-product-actions input::-webkit-outer-spin-button,
+  #product-{{ section.id }} .nutrea-product-actions input::-webkit-inner-spin-button {
     margin: 0 !important;
     -webkit-appearance: none !important;
   }
 
-  /* Remove overly strong theme borders on nested quantity elements */
-  #product-{{ section.id }} product-quantity *,
-  #product-{{ section.id }} .product-quantity *,
-  #product-{{ section.id }} .quantity-selector *,
-  #product-{{ section.id }} .quantity * {
-    box-shadow: none !important;
+  /* Buy Now / dynamic checkout is intentionally hidden. */
+  #product-{{ section.id }} .nutrea-product-actions .shopify-payment-button {
+    display: none !important;
   }
 
-  /* Mobile */
   @media screen and (max-width: 749px) {
-    #product-{{ section.id }} .product__cart-functions .flex-buttons {
-      gap: 8px;
-    }
-
-    #product-{{ section.id }} .add-to-cart.button {
-      min-height: 48px !important;
-      padding: 10px 18px !important;
-      border-radius: 11px !important;
-      font-size: 15px !important;
-    }
-
-    #product-{{ section.id }} product-quantity,
-    #product-{{ section.id }} .product-quantity,
-    #product-{{ section.id }} .quantity-selector,
-    #product-{{ section.id }} .quantity {
-      min-height: 48px !important;
-      height: 48px !important;
-      border-radius: 11px !important;
-    }
-
-    #product-{{ section.id }} product-quantity button,
-    #product-{{ section.id }} .product-quantity button,
-    #product-{{ section.id }} .quantity-selector button,
-    #product-{{ section.id }} .quantity button {
-      width: 38px !important;
-      min-width: 38px !important;
-      height: 48px !important;
-      min-height: 48px !important;
-      font-size: 20px !important;
-    }
-
-    #product-{{ section.id }} product-quantity input,
-    #product-{{ section.id }} .product-quantity input,
-    #product-{{ section.id }} .quantity-selector input,
-    #product-{{ section.id }} .quantity input {
-      width: 32px !important;
-      min-width: 32px !important;
-      height: 48px !important;
-      min-height: 48px !important;
-      font-size: 14px !important;
+    #product-{{ section.id }} .nutrea-product-actions .flex-buttons {
+      gap: var(--nutrea-buy-gap-mobile, 8px);
     }
   }
-{% endstyle %}
+</style>
 
 {% schema %}
   {
@@ -1432,13 +1396,6 @@
         },
         {
           "type": "checkbox",
-          "id": "show_dynamic_checkout",
-          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
-          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info",
-          "default": true
-        },
-        {
-          "type": "checkbox",
           "id": "show_gift_card_recipient",
           "default": false,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
@@ -1475,6 +1432,221 @@
             }
           ],
           "default": "solid"
+        },
+        {
+          "type": "header",
+          "content": "Nutrea Add to Cart styling"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_bg",
+          "label": "Button background",
+          "default": "#B08968"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_hover_bg",
+          "label": "Button hover background",
+          "default": "#9B7659"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_text",
+          "label": "Button text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_hover_text",
+          "label": "Button hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_border",
+          "label": "Button border",
+          "default": "#B08968"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_atc_hover_border",
+          "label": "Button hover border",
+          "default": "#9B7659"
+        },
+        {
+          "type": "range",
+          "id": "nutrea_atc_radius",
+          "label": "Button corner radius",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "nutrea_atc_height",
+          "label": "Button height",
+          "min": 42,
+          "max": 72,
+          "step": 1,
+          "unit": "px",
+          "default": 52
+        },
+        {
+          "type": "range",
+          "id": "nutrea_atc_font_size",
+          "label": "Button text size",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "select",
+          "id": "nutrea_atc_font_weight",
+          "label": "Button font weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semi bold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ],
+          "default": "500"
+        },
+        {
+          "type": "range",
+          "id": "nutrea_atc_letter_spacing",
+          "label": "Button letter spacing",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "header",
+          "content": "Nutrea Quantity styling"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_qty_bg",
+          "label": "Quantity background",
+          "default": "#FBF8F4"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_qty_border",
+          "label": "Quantity border",
+          "default": "#D8C7B9"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_qty_text",
+          "label": "Quantity text and symbols",
+          "default": "#4A382E"
+        },
+        {
+          "type": "color",
+          "id": "nutrea_qty_hover_bg",
+          "label": "Quantity hover background",
+          "default": "#F4ECE5"
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_radius",
+          "label": "Quantity corner radius",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_height",
+          "label": "Quantity height",
+          "min": 42,
+          "max": 72,
+          "step": 1,
+          "unit": "px",
+          "default": 52
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_control_width",
+          "label": "Plus/minus width",
+          "min": 30,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "default": 42
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_number_width",
+          "label": "Number width",
+          "min": 24,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_symbol_size",
+          "label": "Plus/minus size",
+          "min": 14,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "default": 22
+        },
+        {
+          "type": "range",
+          "id": "nutrea_qty_number_size",
+          "label": "Number size",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Buy area spacing"
+        },
+        {
+          "type": "range",
+          "id": "nutrea_buy_gap",
+          "label": "Desktop gap",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "nutrea_buy_gap_mobile",
+          "label": "Mobile gap",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 8
         }
       ]
     },
