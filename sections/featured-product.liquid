@@ -13,6 +13,189 @@
 
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+  .nutrea-google-review {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: var(--ngr-pad-y) var(--ngr-pad-x);
+    background:
+      linear-gradient(135deg, rgba(176, 137, 104, 0.08), transparent 46%),
+      var(--ngr-bg);
+    border: var(--ngr-border-width) solid var(--ngr-border);
+    border-radius: var(--ngr-radius);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .nutrea-google-review::after {
+    content: "";
+    position: absolute;
+    top: -26px;
+    right: -18px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(176, 137, 104, 0.07);
+    pointer-events: none;
+  }
+
+  .nutrea-google-review__rating-side {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 0 0 auto;
+    min-width: max-content;
+  }
+
+  .nutrea-google-review__eyebrow {
+    color: var(--ngr-meta);
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .nutrea-google-review__score-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .nutrea-google-review__stars {
+    position: relative;
+    display: inline-block;
+    font-size: var(--ngr-star-size);
+    line-height: 1;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .nutrea-google-review__stars-base {
+    color: var(--ngr-star-empty);
+  }
+
+  .nutrea-google-review__stars-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    overflow: hidden;
+    color: var(--ngr-star);
+    white-space: nowrap;
+  }
+
+  .nutrea-google-review__rating,
+  .nutrea-google-review__on-text {
+    color: var(--ngr-meta);
+    font-size: var(--ngr-meta-size);
+    font-weight: 600;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .nutrea-google-review__on-text {
+    font-weight: 400;
+    opacity: 0.78;
+  }
+
+  .nutrea-google-review__google {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    flex: 0 0 auto;
+  }
+
+  a.nutrea-google-review__google:hover {
+    opacity: 0.82;
+  }
+
+  .nutrea-google-review__google-icon {
+    display: block;
+    width: var(--ngr-google-size);
+    height: var(--ngr-google-size);
+  }
+
+  .nutrea-google-review__divider {
+    width: 1px;
+    height: 34px;
+    background: var(--ngr-border);
+    opacity: 0.75;
+    flex: 0 0 auto;
+  }
+
+  .nutrea-google-review__quote {
+    color: var(--ngr-quote);
+    font-size: var(--ngr-quote-size);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.15px;
+    flex: 1 1 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .nutrea-google-review {
+      gap: 10px;
+      padding: var(--ngr-mobile-pad-y) var(--ngr-mobile-pad-x);
+    }
+
+    .nutrea-google-review__rating-side {
+      gap: 4px;
+    }
+
+    .nutrea-google-review__eyebrow {
+      font-size: 8px;
+      letter-spacing: 1.05px;
+    }
+
+    .nutrea-google-review__score-row {
+      gap: 5px;
+    }
+
+    .nutrea-google-review__stars {
+      font-size: var(--ngr-mobile-star-size);
+    }
+
+    .nutrea-google-review__rating,
+    .nutrea-google-review__on-text {
+      font-size: var(--ngr-mobile-meta-size);
+    }
+
+    .nutrea-google-review__google-icon {
+      width: var(--ngr-mobile-google-size);
+      height: var(--ngr-mobile-google-size);
+    }
+
+    .nutrea-google-review__divider {
+      height: 30px;
+    }
+
+    .nutrea-google-review__quote {
+      font-size: var(--ngr-mobile-quote-size);
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .nutrea-google-review {
+      flex-wrap: wrap;
+    }
+
+    .nutrea-google-review__divider {
+      display: none;
+    }
+
+    .nutrea-google-review__quote {
+      flex-basis: 100%;
+      padding-top: 2px;
+      font-weight: 550;
+    }
+  }
+{% endstyle %}
+
+
 <product-page 
   id="product-{{ section.id }}" 
   class="container container--large container--vertical-space-small grid grid--layout grid--gap-xlarge grid-2 grid-lap-1 grid--no-stretch product" 
@@ -344,185 +527,107 @@
             -%}
           </{{ block.settings.seo_h_tag }}>
 
+
         {%- when 'google-review' -%}
 
-          {%- assign google_rating_percent = block.settings.rating | times: 20 -%}
+          {%- assign google_rating_percent = block.settings.rating | plus: 0 | times: 20 -%}
 
           <div
-            id="GoogleReview-{{ block.id }}"
             class="nutrea-google-review"
+            style="
+              --ngr-bg: {{ block.settings.background_color }};
+              --ngr-border: {{ block.settings.border_color }};
+              --ngr-quote: {{ block.settings.quote_color }};
+              --ngr-meta: {{ block.settings.meta_color }};
+              --ngr-star: {{ block.settings.star_color }};
+              --ngr-star-empty: {{ block.settings.star_empty_color }};
+              --ngr-radius: {{ block.settings.border_radius }}px;
+              --ngr-border-width: {{ block.settings.border_width }}px;
+              --ngr-pad-y: {{ block.settings.padding_vertical }}px;
+              --ngr-pad-x: {{ block.settings.padding_horizontal }}px;
+              --ngr-mobile-pad-y: {{ block.settings.mobile_padding_vertical }}px;
+              --ngr-mobile-pad-x: {{ block.settings.mobile_padding_horizontal }}px;
+              --ngr-quote-size: {{ block.settings.quote_size }}px;
+              --ngr-mobile-quote-size: {{ block.settings.mobile_quote_size }}px;
+              --ngr-meta-size: {{ block.settings.meta_size }}px;
+              --ngr-mobile-meta-size: {{ block.settings.mobile_meta_size }}px;
+              --ngr-star-size: {{ block.settings.star_size }}px;
+              --ngr-mobile-star-size: {{ block.settings.mobile_star_size }}px;
+              --ngr-google-size: {{ block.settings.google_icon_size }}px;
+              --ngr-mobile-google-size: {{ block.settings.mobile_google_icon_size }}px;
+            "
             {{ block.shopify_attributes }}
           >
+
+            <div class="nutrea-google-review__rating-side">
+
+              <span class="nutrea-google-review__eyebrow">
+                {{ block.settings.eyebrow_text | escape }}
+              </span>
+
+              <div class="nutrea-google-review__score-row">
+
+                <div
+                  class="nutrea-google-review__stars"
+                  aria-label="{{ block.settings.rating }} out of 5 stars"
+                >
+                  <span class="nutrea-google-review__stars-base" aria-hidden="true">★★★★★</span>
+                  <span
+                    class="nutrea-google-review__stars-fill"
+                    aria-hidden="true"
+                    style="width: {{ google_rating_percent }}%;"
+                  >★★★★★</span>
+                </div>
+
+                <span class="nutrea-google-review__rating">
+                  {{ block.settings.rating }}/5
+                </span>
+
+                <span class="nutrea-google-review__on-text">
+                  {{ block.settings.on_text | escape }}
+                </span>
+
+                {%- if block.settings.google_url != blank -%}
+                  <a
+                    class="nutrea-google-review__google"
+                    href="{{ block.settings.google_url }}"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="View Google reviews"
+                  >
+                {%- else -%}
+                  <span class="nutrea-google-review__google" aria-label="Google">
+                {%- endif -%}
+
+                    <svg
+                      class="nutrea-google-review__google-icon"
+                      viewBox="0 0 48 48"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.659 32.657 29.201 36 24 36c-6.627 0-12-5.373-12-12S17.373 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.277 4 24 4 12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                      <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 16.108 19.001 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.277 4 24 4c-7.682 0-14.347 4.337-17.694 10.691z"/>
+                      <path fill="#4CAF50" d="M24 44c5.178 0 9.867-1.977 13.409-5.193l-6.19-5.238C29.144 35.091 26.678 36 24 36c-5.18 0-9.625-3.326-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                      <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.793 2.237-2.231 4.166-4.084 5.569l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                    </svg>
+
+                {%- if block.settings.google_url != blank -%}
+                  </a>
+                {%- else -%}
+                  </span>
+                {%- endif -%}
+
+              </div>
+
+            </div>
+
+            <span class="nutrea-google-review__divider" aria-hidden="true"></span>
+
             <div class="nutrea-google-review__quote">
               “{{ block.settings.review_text | escape }}”
             </div>
 
-            <div class="nutrea-google-review__meta">
-              <div
-                class="nutrea-google-review__stars"
-                aria-label="{{ block.settings.rating }} out of 5 stars"
-              >
-                <span class="nutrea-google-review__stars-base" aria-hidden="true">★★★★★</span>
-                <span
-                  class="nutrea-google-review__stars-fill"
-                  aria-hidden="true"
-                  style="width: {{ google_rating_percent }}%;"
-                >★★★★★</span>
-              </div>
-
-              <span class="nutrea-google-review__rating">
-                {{ block.settings.rating_prefix | escape }} {{ block.settings.rating }}/5
-              </span>
-
-              {%- if block.settings.google_url != blank -%}
-                <a
-                  class="nutrea-google-review__google"
-                  href="{{ block.settings.google_url }}"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="View Google reviews"
-                >
-              {%- else -%}
-                <span class="nutrea-google-review__google" aria-label="Google">
-              {%- endif -%}
-
-                <span class="nutrea-google-review__on-text">{{ block.settings.on_text | escape }}</span>
-
-                <svg
-                  class="nutrea-google-review__google-icon"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.659 32.657 29.201 36 24 36c-6.627 0-12-5.373-12-12S17.373 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.277 4 24 4 12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20c0-1.341-.138-2.65-.389-3.917z"/>
-                  <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 16.108 19.001 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.277 4 24 4c-7.682 0-14.347 4.337-17.694 10.691z"/>
-                  <path fill="#4CAF50" d="M24 44c5.178 0 9.867-1.977 13.409-5.193l-6.19-5.238C29.144 35.091 26.678 36 24 36c-5.18 0-9.625-3.326-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
-                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.793 2.237-2.231 4.166-4.084 5.569l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
-                </svg>
-
-              {%- if block.settings.google_url != blank -%}
-                </a>
-              {%- else -%}
-                </span>
-              {%- endif -%}
-            </div>
           </div>
-
-          <style>
-            #GoogleReview-{{ block.id }} {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 18px;
-              width: 100%;
-              padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
-              background: {{ block.settings.background_color }};
-              border: {{ block.settings.border_width }}px {{ block.settings.border_style }} {{ block.settings.border_color }};
-              border-radius: {{ block.settings.border_radius }}px;
-              box-sizing: border-box;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__quote {
-              color: {{ block.settings.quote_color }};
-              font-size: {{ block.settings.quote_size }}px;
-              font-weight: 700;
-              line-height: 1.25;
-              letter-spacing: -0.2px;
-              flex: 1 1 auto;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__meta {
-              display: flex;
-              align-items: center;
-              justify-content: flex-end;
-              gap: 10px;
-              flex: 0 0 auto;
-              flex-wrap: wrap;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__stars {
-              position: relative;
-              display: inline-block;
-              font-size: {{ block.settings.star_size }}px;
-              line-height: 1;
-              letter-spacing: 1px;
-              white-space: nowrap;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__stars-base {
-              color: {{ block.settings.star_empty_color }};
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__stars-fill {
-              position: absolute;
-              top: 0;
-              left: 0;
-              overflow: hidden;
-              color: {{ block.settings.star_color }};
-              white-space: nowrap;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__rating,
-            #GoogleReview-{{ block.id }} .nutrea-google-review__on-text {
-              color: {{ block.settings.meta_color }};
-              font-size: {{ block.settings.meta_size }}px;
-              font-weight: 500;
-              line-height: 1.2;
-              white-space: nowrap;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__google {
-              display: inline-flex;
-              align-items: center;
-              gap: 7px;
-              color: inherit;
-              text-decoration: none;
-            }
-
-            #GoogleReview-{{ block.id }} a.nutrea-google-review__google:hover {
-              opacity: 0.8;
-            }
-
-            #GoogleReview-{{ block.id }} .nutrea-google-review__google-icon {
-              display: block;
-              width: {{ block.settings.google_icon_size }}px;
-              height: {{ block.settings.google_icon_size }}px;
-              flex: 0 0 auto;
-            }
-
-            @media screen and (max-width: 749px) {
-              #GoogleReview-{{ block.id }} {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                padding: {{ block.settings.mobile_padding_vertical }}px {{ block.settings.mobile_padding_horizontal }}px;
-              }
-
-              #GoogleReview-{{ block.id }} .nutrea-google-review__quote {
-                font-size: {{ block.settings.mobile_quote_size }}px;
-              }
-
-              #GoogleReview-{{ block.id }} .nutrea-google-review__meta {
-                justify-content: flex-start;
-                gap: 8px;
-              }
-
-              #GoogleReview-{{ block.id }} .nutrea-google-review__stars {
-                font-size: {{ block.settings.mobile_star_size }}px;
-              }
-
-              #GoogleReview-{{ block.id }} .nutrea-google-review__rating,
-              #GoogleReview-{{ block.id }} .nutrea-google-review__on-text {
-                font-size: {{ block.settings.mobile_meta_size }}px;
-              }
-
-              #GoogleReview-{{ block.id }} .nutrea-google-review__google-icon {
-                width: {{ block.settings.mobile_google_icon_size }}px;
-                height: {{ block.settings.mobile_google_icon_size }}px;
-              }
-            }
-          </style>
-
         {%- when 'price' -%}
 
           <div class="text-size--xlarge" {{ block.shopify_attributes }} data-js-product-price-compact>
@@ -1217,6 +1322,12 @@
       "settings": [
         {
           "type": "text",
+          "id": "eyebrow_text",
+          "label": "Small label",
+          "default": "CUSTOMER LOVE"
+        },
+        {
+          "type": "text",
           "id": "review_text",
           "label": "Review quote",
           "default": "Feeling lighter and more energized"
@@ -1252,25 +1363,25 @@
           "type": "color",
           "id": "background_color",
           "label": "Background",
-          "default": "#FAF7F3"
+          "default": "#FBF8F4"
         },
         {
           "type": "color",
           "id": "border_color",
           "label": "Border",
-          "default": "#B8A99B"
+          "default": "#D8C7B9"
         },
         {
           "type": "color",
           "id": "quote_color",
           "label": "Quote text",
-          "default": "#111111"
+          "default": "#2B211C"
         },
         {
           "type": "color",
           "id": "meta_color",
           "label": "Rating text",
-          "default": "#222222"
+          "default": "#4A3A31"
         },
         {
           "type": "color",
@@ -1306,7 +1417,7 @@
               "label": "Dotted"
             }
           ],
-          "default": "dashed"
+          "default": "solid"
         },
         {
           "type": "range",
@@ -1326,7 +1437,7 @@
           "max": 40,
           "step": 1,
           "unit": "px",
-          "default": 16
+          "default": 14
         },
         {
           "type": "range",
@@ -1336,7 +1447,7 @@
           "max": 30,
           "step": 1,
           "unit": "px",
-          "default": 14
+          "default": 10
         },
         {
           "type": "range",
@@ -1346,7 +1457,7 @@
           "max": 40,
           "step": 1,
           "unit": "px",
-          "default": 18
+          "default": 14
         },
         {
           "type": "range",
@@ -1356,7 +1467,7 @@
           "max": 24,
           "step": 1,
           "unit": "px",
-          "default": 12
+          "default": 10
         },
         {
           "type": "range",
@@ -1366,7 +1477,7 @@
           "max": 30,
           "step": 1,
           "unit": "px",
-          "default": 14
+          "default": 12
         },
         {
           "type": "header",
@@ -1380,7 +1491,7 @@
           "max": 28,
           "step": 1,
           "unit": "px",
-          "default": 16
+          "default": 14
         },
         {
           "type": "range",
@@ -1390,7 +1501,7 @@
           "max": 22,
           "step": 1,
           "unit": "px",
-          "default": 14
+          "default": 12
         },
         {
           "type": "range",
@@ -1400,7 +1511,7 @@
           "max": 32,
           "step": 1,
           "unit": "px",
-          "default": 20
+          "default": 17
         },
         {
           "type": "range",
@@ -1410,7 +1521,7 @@
           "max": 50,
           "step": 1,
           "unit": "px",
-          "default": 30
+          "default": 24
         },
         {
           "type": "range",
@@ -1420,7 +1531,7 @@
           "max": 22,
           "step": 1,
           "unit": "px",
-          "default": 15
+          "default": 13
         },
         {
           "type": "range",
@@ -1430,7 +1541,7 @@
           "max": 18,
           "step": 1,
           "unit": "px",
-          "default": 12
+          "default": 11
         },
         {
           "type": "range",
@@ -1440,7 +1551,7 @@
           "max": 26,
           "step": 1,
           "unit": "px",
-          "default": 18
+          "default": 16
         },
         {
           "type": "range",
@@ -1450,7 +1561,7 @@
           "max": 40,
           "step": 1,
           "unit": "px",
-          "default": 26
+          "default": 22
         }
       ]
     },
