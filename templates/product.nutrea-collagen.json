@@ -14,11 +14,9 @@
       "blocks": {
         "vendor": {
           "type": "vendor",
-          "settings": {}
-        },
-        "empty_space": {
-          "type": "space",
-          "settings": {}
+          "settings": {
+            "text_size": "text-size--regular"
+          }
         },
         "title": {
           "type": "title",
@@ -31,13 +29,24 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
+            "variants_style": "radio",
             "show_quantities": "no"
           }
+        },
+        "empty_space": {
+          "type": "space",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true
+            "show_quantity_selector": true,
+            "show_price": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false,
+            "color_text_buttons": "rgba(0,0,0,0)",
+            "color_accent_buttons": "rgba(0,0,0,0)",
+            "style_buttons": "solid"
           }
         }
       },
@@ -50,13 +59,45 @@
         "buy_buttons"
       ],
       "settings": {
+        "gallery_ratio": "natural",
+        "gallery_fit": false,
+        "show_border": false,
+        "gallery_card_design": false,
+        "gallery_padding": 0,
         "gallery_pagination": "dots",
-        "enable_video_looping": false
+        "enable_video_looping": false,
+        "default_to_first_variant": true
+      }
+    },
+    "17835203995b1ece9b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_zjURjX": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_zjURjX"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "section_heading_layout": "section-heading--left",
+        "full_width": false,
+        "remove_margin": false,
+        "seo_h_tag": "h2"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "17835203995b1ece9b"
   ],
   "layout": "popup"
 }
