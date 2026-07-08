@@ -287,7 +287,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop now →",
-            "link": "shopify://collections/cozy-hoodie-blankets",
+            "link": "shopify://pages/nutrea-product-page",
             "open_in_new_window": false,
             "button_size": "regular",
             "button_style": "solid"
@@ -343,60 +343,6 @@
         "seo_h_tag": "h2"
       }
     },
-    "16553621956de397b6": {
-      "type": "testimonials",
-      "blocks": {
-        "16553621951e01132c-0": {
-          "type": "testimonial",
-          "settings": {
-            "author_name": "Mariaassi",
-            "author_title": "Review",
-            "quote": "<p>J’aimeeee😍, quality parfaite ktir bt daffe ma beshlaha nowayy, reordering fss tyy💖</p>"
-          }
-        },
-        "testimonial_aCF9ax": {
-          "type": "testimonial",
-          "settings": {
-            "author_name": "Dr ziad",
-            "author_title": "Review",
-            "quote": "<p>products are amazing when it comes to quality and material, packaging very classy and nice esp if it’s a gift👍❤️</p>"
-          }
-        },
-        "16553621951e01132c-1": {
-          "type": "testimonial",
-          "settings": {
-            "author_name": "Eleyaa",
-            "author_title": "Review",
-            "quote": "<p>my bf got me a hoodie and a slipper from you guys, best gift ever saraha i just love your quality smm💖💖 check your dms ive sent picturess</p>"
-          }
-        }
-      },
-      "block_order": [
-        "16553621951e01132c-0",
-        "testimonial_aCF9ax",
-        "16553621951e01132c-1"
-      ],
-      "settings": {
-        "heading": "Testimonials",
-        "subheading": "What our clients say",
-        "section_heading_layout": "section-heading--left",
-        "quote_font": "crimson_text_i4",
-        "quote_font_size": 34,
-        "quote_line_height": 1.1,
-        "content_alignment": "center",
-        "color_background_main": "#ebebe5",
-        "color_text_main": "#000000",
-        "color_borders_main": "rgba(0,0,0,0)",
-        "color_shadow_main": "rgba(0,0,0,0)",
-        "color_hide_borders": true,
-        "color_hide_shadow": false,
-        "section_background_color": "rgba(0,0,0,0)",
-        "section_background_gradient": "",
-        "section_heading_color": "rgba(0,0,0,0)",
-        "remove_margin": false,
-        "seo_h_tag": "h2"
-      }
-    },
     "1783457495ffbd9dbb": {
       "type": "_blocks",
       "settings": {}
@@ -411,7 +357,6 @@
     "custom_liquid_p7jExL",
     "165407625224b5d2af",
     "17835132512ae03ea4",
-    "16553621956de397b6",
     "1783457495ffbd9dbb"
   ]
 }

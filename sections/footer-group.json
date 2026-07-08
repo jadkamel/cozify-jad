@@ -1,1 +1,128 @@
-{"type":"footer","name":"t:sections.refactor_words.labels.footer_group","sections":{"text_columns_icons_Rp9Txd":{"type":"text-columns-icons","blocks":{"image_YrzhRD":{"type":"image","settings":{"icon":"delivery","title":"Free delivery all over lebanon","caption":"We offer free delivery on orders above 60$","link":"","open_in_new_window":false,"color_background_main":"rgba(0,0,0,0)","color_icons_main":"rgba(0,0,0,0)","seo_h_tag":"h3"}},"image_FdmHQG":{"type":"image","settings":{"icon":"time-limit","title":"Returns","caption":"If our product doesn’t Exceed your standards, we offer a no-questions-asked, full refund.","link":"","open_in_new_window":false,"color_background_main":"rgba(0,0,0,0)","color_icons_main":"rgba(0,0,0,0)","seo_h_tag":"h3"}},"image_EYfmWD":{"type":"image","settings":{"icon":"open-box","title":"Cash on delivery","caption":"We offer cash on delivery all over Lebanon","link":"","open_in_new_window":false,"color_background_main":"rgba(0,0,0,0)","color_icons_main":"rgba(0,0,0,0)","seo_h_tag":"h3"}},"image_RtgxJt":{"type":"image","settings":{"icon":"security-shield","title":"Custom extreme thickness","caption":"The thickest ❄️, softest ✨ and most comfiest 🧸 hoodies ever that will exceed your expectations.","link":"","open_in_new_window":false,"color_background_main":"rgba(0,0,0,0)","color_icons_main":"rgba(0,0,0,0)","seo_h_tag":"h3"}}},"block_order":["image_YrzhRD","image_FdmHQG","image_EYfmWD","image_RtgxJt"],"settings":{"heading":"","subheading":"","section_heading_layout":"section-heading--left","style":"slider","layout":"grid-4 grid-portable-3 grid-lap-2","border_radius":200,"section_background_color":"rgba(0,0,0,0)","section_background_gradient":"","section_heading_color":"rgba(0,0,0,0)","remove_margin":false,"seo_h_tag":"h2"}},"footer":{"type":"footer","blocks":{"newsletter_HjRp7z":{"type":"newsletter","settings":{"title":"Join our discount offers and bundles"}},"text-1":{"type":"text","settings":{"title":"About cozifyy","size":"h5","content":"<p>you have no idea about the feelings you're about to experience 🥰.<\/p><p>The thickest ❄️, softest ✨ and most comfiest 🧸 hoodies ever that will exceed your expectations.<\/p>","show_social_icons":true,"enable_follow_on_shop":true}},"menu-1":{"type":"menu","settings":{"title":"Our Safe Policies","menu":"footer","open_in_new_window":false}},"text-2":{"type":"text","settings":{"title":"Contact information","size":"h5","content":"<p>E-mail: info@cozifyyy.com<\/p><p>Phone number: +961 76 548 273<\/p>","show_social_icons":false,"enable_follow_on_shop":true}}},"block_order":["newsletter_HjRp7z","text-1","menu-1","text-2"],"settings":{"layout":"grid-4 grid-portable-2 grid-lap-1","show_locale_selector":true,"show_country_selector":true,"remove_margin":false,"seo_h_tag":"h4"}}},"order":["text_columns_icons_Rp9Txd","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.refactor_words.labels.footer_group",
+  "sections": {
+    "text_columns_icons_Rp9Txd": {
+      "type": "text-columns-icons",
+      "blocks": {
+        "image_YrzhRD": {
+          "type": "image",
+          "settings": {
+            "icon": "delivery",
+            "title": "Free delivery all over lebanon",
+            "caption": "",
+            "link": "",
+            "open_in_new_window": false,
+            "color_background_main": "rgba(0,0,0,0)",
+            "color_icons_main": "rgba(0,0,0,0)",
+            "seo_h_tag": "h3"
+          }
+        },
+        "image_FdmHQG": {
+          "type": "image",
+          "settings": {
+            "icon": "time-limit",
+            "title": "Returns",
+            "caption": "30 day money back guarantee. Dont see any results? Here's your money!",
+            "link": "",
+            "open_in_new_window": false,
+            "color_background_main": "rgba(0,0,0,0)",
+            "color_icons_main": "rgba(0,0,0,0)",
+            "seo_h_tag": "h3"
+          }
+        },
+        "image_EYfmWD": {
+          "type": "image",
+          "settings": {
+            "icon": "open-box",
+            "title": "Cash on delivery",
+            "caption": "We offer cash on delivery all over Lebanon",
+            "link": "",
+            "open_in_new_window": false,
+            "color_background_main": "rgba(0,0,0,0)",
+            "color_icons_main": "rgba(0,0,0,0)",
+            "seo_h_tag": "h3"
+          }
+        },
+        "image_RtgxJt": {
+          "type": "image",
+          "settings": {
+            "icon": "security-shield",
+            "title": "Premium Collagen Blend",
+            "caption": "Pure, potent, made to work.",
+            "link": "",
+            "open_in_new_window": false,
+            "color_background_main": "rgba(0,0,0,0)",
+            "color_icons_main": "rgba(0,0,0,0)",
+            "seo_h_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "image_YrzhRD",
+        "image_FdmHQG",
+        "image_EYfmWD",
+        "image_RtgxJt"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "section_heading_layout": "section-heading--left",
+        "style": "slider",
+        "layout": "grid-4 grid-portable-3 grid-lap-2",
+        "border_radius": 200,
+        "section_background_color": "rgba(0,0,0,0)",
+        "section_background_gradient": "",
+        "section_heading_color": "rgba(0,0,0,0)",
+        "remove_margin": false,
+        "seo_h_tag": "h2"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter_HjRp7z": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Join our discount offers and bundles"
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Contact information",
+            "size": "h5",
+            "content": "<p>E-mail: info@cozifyyy.com</p><p>Phone number: +961 76 548 273</p>",
+            "show_social_icons": false,
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_HjRp7z",
+        "text-2"
+      ],
+      "settings": {
+        "layout": "grid-4 grid-portable-2 grid-lap-1",
+        "show_locale_selector": true,
+        "show_country_selector": true,
+        "remove_margin": false,
+        "seo_h_tag": "h4"
+      }
+    }
+  },
+  "order": [
+    "text_columns_icons_Rp9Txd",
+    "footer"
+  ]
+}
